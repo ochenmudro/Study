@@ -1,0 +1,89 @@
+public class Node {
+    int data;
+    Node next;
+}
+
+public class LinkedList {
+    private Node head;
+    private Node tail;
+
+    public void addFirst(int data) {
+        Node node = new Node();
+        node.data = data;
+
+        if (head == null) {
+            head = node;
+            tail = node;
+        } else {
+            node.next = head;
+            head = node;
+        }
+    }
+
+    public void addLast(int data) {
+        Node node = new Node();
+        node.data = data;
+        if (tail == null) {
+            head = node;
+            tail = node;
+        } else {
+            tail.next = node;
+            tail = node;
+        }
+    }
+
+    public void remove(int data) {
+        if (head == null)
+            return;
+
+        if (head == tail) {
+            head = null;
+            tail = null;
+            return;
+        }
+
+        if (head.data == data) {
+            head = head.next;
+            return;
+        } else {
+            Node t = head;
+            while (t.next != null) {
+                if (t.next.data == data) {
+                    if (tail == t.next) {
+                        tail = t;
+                    }
+                    t.next = t.next.next;
+                    return;
+                }
+                t = t.next;
+            }
+        }
+    }
+
+    public void search(int data) {
+        if (head == null)
+            return false;
+
+        if (head.data == data) {
+            return true;
+        } else {
+            Node node = head;
+            while (node.next != null) {
+                if (node.next.data == data) {
+                    return true;
+                } else returne false;
+            }
+        }
+    }
+
+    void printList()                //печать списка
+    {
+        Node t = this.head;       //получаем ссылку на первый элемент
+        while (t != null)           //пока элемент существуе
+        {
+            System.out.print(t.data + " "); //печатаем его данные
+            t = t.next;                     //и переключаемся на следующий
+        }
+        System.out.println();
+    }
+}

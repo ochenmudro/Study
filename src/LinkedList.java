@@ -37,9 +37,11 @@ public class LinkedList {
             return;
 
         if (head == tail) {
+            if(head.data == data){
             head = null;
             tail = null;
-            return;
+            return;}
+            else return;
         }
 
         if (head.data == data) {
@@ -64,21 +66,22 @@ public class LinkedList {
         head = null;
     }
 
-    public void search(int data) {
+     public boolean search(int data) {
         Node node = head;
+        if(head == null) {
+            System.out.println("no elements in list");
+            return false;
+        }
         while (node.next != null) {
             if (node.data == data) {
-                System.out.println("true");
-                return;
+                return true;
             }
             node = node.next;
         }
         if (node.data == data) {
-            System.out.println("true");
-            return;
+            return true;
         }
-        System.out.println("false");
-        return;
+        return false;
     }
 
     public void print() {

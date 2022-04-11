@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+
         LinkedList list = new LinkedList();
         for (int i = 0; i < 5; i++) {
             list.addLast(i);
@@ -12,5 +13,6 @@ public class Main {
         list.search(4);
         list.clear();
         list.print();
+
     }
 }

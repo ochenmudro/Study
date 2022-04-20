@@ -1,9 +1,11 @@
 package cmd;
 
+
 public class Main {
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         try {
-            if (args.length != 4) throw new WrongArgsException("Wrong number of values ", args.length);
+            if (args.length != 4 || !isNumeric(args[3])) throw new WrongArgsException("Wrong  values ", args.length);
             String name = args[0];
             String country = args[1];
             String date = args[2];
@@ -12,6 +14,15 @@ public class Main {
         } catch (WrongArgsException exception) {
             System.out.println(exception.getMessage());
         }
+    }
+
+    private static boolean isNumeric(String arg) {
+        try {
+            int d = Integer.parseInt(arg);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
     }
 }
 

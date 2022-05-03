@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule</title>
+    <link rel="shortcut icon" href="img/icons8-schedule-64.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tapestry&family=Titillium+Web:wght@200&display=swap"
+          rel="stylesheet">
+    <style>
+    body{
+    background-color:#D8BFD8;
+    font-family: 'Tapestry', cursive;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 3px solid black;
+        padding: 15px;
+    }
+    a {
+    color: black;
+    text-decoration: none;
+    font-size:25px;
+    border: 1px solid black;
+    padding: 0 3px 0 3px;
+    margin: 120px ;
+   }
+</style>
+    <script>
+   function digitalClock() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+      if (hours < 10) hours = "0" + hours;
+      if (minutes < 10) minutes = "0" + minutes;
+      if (seconds < 10) seconds = "0" + seconds;
+        document.getElementById("id_clock").innerHTML = hours + ":" + minutes + ":" + seconds;
+        setTimeout("digitalClock()", 1000);
+   }
+  </script>
+</head>
+<body>
+<div style="margin-top:50px">
+    <a href="cv.html"><img src="img/icons8-resume-64.png" width="25px">Resume</a><br>
+    <a href="inst.html"><img src="img/icons8-пентаграмма-64.png" width="25px">Pentagram</a><br>
+    <a href="schedule.html"><img src="img/icons8-schedule-64.png" width="25px">Schedule</a>
+</div>
+<div id="id_clock" style="margin:0 0 0 750px; font-size:30px"></div>
+<script>digitalClock();</script>
+<table style="width:500px; margin:50px 0 0 550px">
+    <tr><th colspan="2" style="font-size:25px;">Schedule</th></tr>
+    <tr style="font-size:25px;"><td>Time</td><td>Class</td></tr>
+    <tr><td>9:50</td><td>mathematics</td></tr>
+    <tr><td>11:25</td><td>history</td></tr>
+    <tr><td>12:45</td><td>informatics</td></tr>
+    <tr><td>14:50</td><td>physics</td></tr>
+    <tr><td>16:10</td><td>english</td></tr>
+</table>
+
+</body>
+</html>

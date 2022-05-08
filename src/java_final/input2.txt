@@ -1,0 +1,1 @@
+Hyundai,white,diesel,24,3;Kia,blue,gasoline,40,4;Ikarus,yellow,gasoline,38,3;Kia,white,diesel,22,2;Ikarus,black,diesel,38,4;

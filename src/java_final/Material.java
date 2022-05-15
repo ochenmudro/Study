@@ -1,19 +1,21 @@
 package java_final;
 
 public enum Material {
-    VELOR("velor"),
-    VELVETEEN("velveteen"),
-    PLUSH("plush"),
-    POLYESTER("polyester"),
-    TWEED("tweed");
+    VELOR,
+    VELVETEEN,
+    PLUSH,
+    POLYESTER,
+    TWEED;
 
-    private final String material;
 
-    Material(String material) {
-        this.material = material;
-    }
+    public static Material getMaterial(String mat) {
+        return switch (mat) {
+            case "velveteen" -> VELVETEEN;
+            case "plush" -> PLUSH;
+            case "polyester" -> POLYESTER;
+            case "tweed" -> TWEED;
+            default -> VELOR;
+        };
 
-    public String getOneOfMaterial() {
-        return material;
     }
 }

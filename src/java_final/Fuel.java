@@ -1,15 +1,14 @@
 package java_final;
 
 public enum Fuel {
-    GASOLINE("gasoline"),
-    DIESEL("diesel");
-    private final String fuel;
+    GASOLINE,
+    DIESEL;
 
-    Fuel(String fuel) {
-        this.fuel = fuel;
+    public static Fuel getFuel(String fu) {
+        return switch (fu) {
+            case "gasoline" -> GASOLINE;
+            default -> DIESEL;
+        };
     }
 
-    public String getOneOfFuel() {
-        return fuel;
-    }
 }

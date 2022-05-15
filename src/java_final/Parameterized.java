@@ -19,7 +19,7 @@ public class Parameterized<T extends Auto> {
         System.out.println("Amount of cars like this one: " + count);
     }
 
-    public static <T extends Auto & Comparable<? super T>> void binarySearch(T object, List<T> list) {
+    public static <T extends Auto & Comparable<? super T>> boolean binarySearch(T object, List<T> list) {
         Collections.sort(list);
         int first = 0;
         int last = list.size() - 1;
@@ -33,13 +33,7 @@ public class Parameterized<T extends Auto> {
             }
             position = (first + last) / 2;
         }
-        if (first <= last) {
-            System.out.println("element exist:");
-            object.autoInfo();
-
-        } else {
-            System.out.println("element does not exist");
-        }
+        return first <= last;
     }
 
     public static <T extends Auto & Comparable<? super T>> void max(List<T> list) {

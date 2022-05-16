@@ -1,0 +1,1 @@
+BMW,black,tweed,gasoline;Reno,red,polyester,gasoline;Reno,white,velor,diesel;Audi,green,tweed,diesel;Fiat,black,plush,gasoline;Fiat,black,plush,gasoline;
